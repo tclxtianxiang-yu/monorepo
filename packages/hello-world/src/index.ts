@@ -27,3 +27,21 @@ export const startCountdown = (options: CountdownOptions) => {
 
     return () => clearInterval(timer);
 };
+
+
+function findContentChildren(g: number[], s: number[]): number {
+    g = g.sort((a, b) => a - b);
+    s = s.sort((a, b) => a - b);
+
+    let gi = 0;
+    let si = 0;
+
+    while (gi < g.length && si < s.length) {
+        if (s[si] >= g[gi]) {
+            gi++;
+        }
+        si++;
+    }
+
+    return gi;
+}
