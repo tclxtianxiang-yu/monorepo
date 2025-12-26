@@ -1,0 +1,11 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "description": "A simple web app to test private package",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "@monorepo/hello-world": "workspace:*"
+  }
+}
