@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lerna:version": "lerna version",
-    "lerna:publish": "lerna publish",
+    "lerna:publish": "lerna publish from-git",
     "lerna:run:build": "lerna run build",
     "lerna:run:test": "lerna run test"
   },
