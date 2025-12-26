@@ -1,5 +1,17 @@
 # web-app
 
+## 4.0.0
+
+### Major Changes
+
+- update
+
+### Patch Changes
+
+- Updated dependencies
+  - @monorepo/hello-world@3.0.0
+  - @monorepo/web-ui@2.0.0
+
 ## 3.0.0
 
 ### Major Changes
