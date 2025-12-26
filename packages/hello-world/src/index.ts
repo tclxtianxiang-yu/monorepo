@@ -2,46 +2,28 @@
  * Prints "Hello World" to the console
  */
 export const sayHello = () => {
-    console.log("Hello World2");
-}
+	console.log("Hello World2");
+};
 
 type CountdownOptions = {
-    seconds: number;
-    onTick?: (remaining: number) => void;
-    onDone?: () => void;
+	seconds: number;
+	onTick?: (remaining: number) => void;
+	onDone?: () => void;
 };
 
 export const startCountdown = (options: CountdownOptions) => {
-    let remaining = Math.max(0, Math.floor(options.seconds));
-    options.onTick?.(remaining);
+	let remaining = Math.max(0, Math.floor(options.seconds));
+	options.onTick?.(remaining);
 
-    const timer = setInterval(() => {
-        remaining -= 1;
-        options.onTick?.(Math.max(0, remaining));
+	const timer = setInterval(() => {
+		remaining -= 1;
+		options.onTick?.(Math.max(0, remaining));
 
-        if (remaining <= 0) {
-            clearInterval(timer);
-            options.onDone?.();
-        }
-    }, 1000);
+		if (remaining <= 0) {
+			clearInterval(timer);
+			options.onDone?.();
+		}
+	}, 1000);
 
-    return () => clearInterval(timer);
+	return () => clearInterval(timer);
 };
-
-
-function findContentChildren(g: number[], s: number[]): number {
-    g = g.sort((a, b) => a - b);
-    s = s.sort((a, b) => a - b);
-
-    let gi = 0;
-    let si = 0;
-
-    while (gi < g.length && si < s.length) {
-        if (s[si] >= g[gi]) {
-            gi++;
-        }
-        si++;
-    }
-
-    return gi;
-}
