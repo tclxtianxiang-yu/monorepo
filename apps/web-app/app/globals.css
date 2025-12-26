@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-gradient-radial {
+    background: radial-gradient(circle at top, #27272a, #09090b 55%, #000000);
+  }
+}

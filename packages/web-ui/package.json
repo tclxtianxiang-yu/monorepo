@@ -1,28 +1,52 @@
 {
   "name": "@monorepo/web-ui",
-  "version": "0.1.0",
-  "description": "Minimal UI components for the web-app",
+  "version": "1.0.0",
+  "description": "Modern React UI components with Radix UI and Tailwind CSS",
   "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/index.css"
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup && pnpm run build:css",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/index.css --minify",
+    "lint": "tsc",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
+    "react",
     "ui",
     "components",
-    "button",
-    "input"
+    "radix-ui",
+    "tailwind"
   ],
   "author": "mikasa-ackerman",
   "license": "MIT",
-  "devDependencies": {
-    "typescript": "^5.3.0"
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
-  "files": [
-    "dist"
-  ],
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "tailwindcss": "^3.4.17",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "typescript": "^5.7.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "publishConfig": {
     "registry": "http://localhost:4873"
   }

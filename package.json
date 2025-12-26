@@ -5,8 +5,10 @@
 	"private": true,
 	"scripts": {
 		"build": "turbo run build",
+		"dev": "turbo run dev",
 		"test": "turbo run test",
 		"lint": "turbo run lint",
+		"storybook": "turbo run storybook",
 		"changeset": "changeset",
 		"version-packages": "changeset version",
 		"publish-packages": "changeset publish"
