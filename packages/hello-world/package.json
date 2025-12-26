@@ -25,5 +25,6 @@
   ],
   "publishConfig": {
     "registry": "http://localhost:4873"
-  }
+  },
+  "gitHead": "3c67d55fbafc46b81514f716dd082f25b7f55ae2"
 }
